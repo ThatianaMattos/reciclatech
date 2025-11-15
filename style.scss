@@ -1,0 +1,747 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+/* TOKENS */
+$verde: #16a34a;
+$verde-escuro: #15803d;
+$azul: #2563eb;
+$bg: #f3f5f6;
+$line: #e5e7eb;
+$title: #1f2937;
+$sub: #485563;
+$white: #fff;
+
+:root {
+  --container: 1120px;
+}
+
+/* BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  color: $title;
+  background: $white; // ou #ffffff
+  line-height: 1.5;
+  background-color: white;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(16px, 3vw, 32px);
+}
+
+/* HEADER */
+header {
+  background: $white;
+  border-bottom: 1px solid $line;
+  @extend .container;
+  padding-block: clamp(14px, 2.2vw, 20px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: clamp(28px, 3vw, 36px);
+    }
+
+    h1 {
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-weight: 700;
+    }
+  }
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.2vw, 28px);
+
+  li a {
+    color: $sub;
+    font-size: clamp(0.95rem, 1.8vw, 1rem);
+    font-weight: 500;
+    padding: 6px 4px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover {
+      color: $verde;
+      background: rgba(22, 163, 74, 0.07);
+    }
+  }
+}
+
+.btnverde .link {
+  display: inline-block;
+  background: $verde;
+  color: $white;
+  font-weight: 700;
+  padding: 10px 14px;
+  border: 2px solid $verde;
+  border-radius: 10px;
+  transition: background 0.2s, border-color 0.2s, transform 0.06s;
+
+  &:hover {
+    background: $verde-escuro;
+    border-color: $verde-escuro;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+/* HERO */
+.primeiraSection {
+  @extend .container;
+  padding-block: clamp(28px, 6vw, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 4vw, 40px);
+
+  > section {
+    flex: 1 1 520px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 2vw, 18px);
+
+    h2 {
+      font-size: clamp(2rem, 5.6vw, 3.2rem);
+      line-height: 1.1;
+      max-width: 18ch;
+    }
+
+    p {
+      color: $sub;
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      max-width: 52ch;
+    }
+  }
+
+  .img-principal {
+    flex: 1 1 420px;
+    width: min(520px, 100%);
+  }
+}
+
+.boxBtnsPrimeiraSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.btnVerde {
+  background: $verde;
+  color: $white;
+  border-color: $verde;
+
+  &:hover {
+    background: $verde-escuro;
+    border-color: $verde-escuro;
+  }
+}
+
+.btnBranco {
+  background: $white;
+  color: $azul;
+  border: 2px solid $azul;
+  border-radius: 10px;
+
+  &:hover {
+    background: rgba(37, 99, 235, 0.06);
+  }
+}
+
+/* STATS */
+.stats {
+  background: #eef2f5;
+  border-top: 1px solid $line;
+  border-bottom: 1px solid $line;
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 6vw, 64px);
+  padding: clamp(18px, 3.6vw, 28px) clamp(12px, 3vw, 24px);
+
+  .stat {
+    background: $white;
+    border: 1px solid $line;
+    border-radius: 14px;
+    padding: clamp(12px, 2.6vw, 18px) clamp(16px, 3vw, 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 180px;
+    gap: 6px;
+
+    strong {
+      color: $verde;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      line-height: 1;
+    }
+
+    span {
+      color: $sub;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 2vw, 1rem);
+      text-align: center;
+    }
+  }
+}
+
+/* COMO FUNCIONA */
+.como {
+  @extend .container;
+  padding-block: clamp(32px, 6vw, 64px);
+  background-color: white;
+}
+
+.como__header {
+  margin-bottom: 24px;
+
+  h3 {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    margin-bottom: 6px;
+    color: $title;
+  }
+
+  p {
+    color: $sub;
+  }
+}
+
+.como__cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 40px);
+  flex-wrap: nowrap;
+}
+
+/* CARD BASE */
+.card {
+  flex: 1 1 0;
+  max-width: 520px;
+  border-radius: 18px;
+  padding: 28px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 35px 80px rgba(15, 23, 42, 0.06);
+}
+
+/* Fundos iguais ao Figma */
+.card--verde {
+  background: #f0fdf4; // fundo verdinho
+}
+
+.card--azul {
+  background: #f3f5f8; // fundo azul clarinho
+}
+
+/* Cabeçalho dos cards: ícone + texto lado a lado */
+.card__title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* cola o texto no ícone */
+  gap: 12px;
+  padding: 0;
+  margin: 0 0 8px 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.card__title h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0; /* evita empurrar para o meio */
+  text-align: left;
+}
+
+.card__sub {
+  color: $sub;
+}
+
+/* Lista de passos */
+.steps {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Bolinha numerada */
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $white;
+}
+
+/* Cores das bolinhas por card */
+.card--verde .step-number {
+  background: #16a34a;
+}
+
+.card--azul .step-number {
+  background: #2563eb;
+}
+
+/* Textos dos passos */
+.step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  strong {
+    color: $title;
+    font-weight: 600;
+  }
+
+  span {
+    color: $sub;
+  }
+}
+
+/* Responsivo: empilha cards em telas menores */
+@media (max-width: 960px) {
+  .como__cards {
+    flex-direction: column;
+  }
+}
+
+/* BOTÕES */
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 11px 18px;
+  border: 2px solid transparent;
+  transition: transform 0.06s, background 0.2s, color 0.2s, border-color 0.2s;
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.btn--primario {
+  background: $verde;
+  color: $white;
+  border-color: $verde;
+
+  &:hover {
+    background: $verde-escuro;
+  }
+}
+
+.btn--secundario {
+  background: transparent;
+  color: $verde;
+  border: 2px solid $verde;
+
+  &:hover {
+    background: $verde;
+    color: $white;
+  }
+}
+
+/* PRODUTOS DISPONÍVEIS */
+/* faixa inteira com fundo cinza */
+.produtos {
+  background: #f3f5f8; // cor do Figma
+  padding-block: clamp(32px, 6vw, 64px);
+}
+
+/* conteúdo centralizado como o resto do site */
+.produtos__inner {
+  @extend .container; // limita largura e dá padding lateral
+}
+
+.produtos__header {
+  text-align: left;
+  margin-bottom: 32px;
+
+  h2 {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    color: $title;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: $sub;
+    font-size: 1rem;
+  }
+}
+
+.produtos__lista {
+  display: flex;
+  gap: clamp(16px, 3vw, 24px);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.produto-card {
+  background: $white;
+  border-radius: 18px;
+  border: 2px solid #16a34a; // verde da borda igual Figma
+  padding: 20px 20px 24px;
+  width: min(100%, 299px); // largura bem próxima do Figma
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.04);
+
+  img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    color: $title;
+    margin-top: 4px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $sub;
+  }
+
+  .produto-card__btn {
+    margin-top: auto;
+    background: #16a34a;
+    color: $white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #15803d;
+    }
+  }
+}
+
+/* Garante os 3 cards na mesma linha em telas grandes */
+@media (min-width: 960px) {
+  .produtos__lista {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+/* DEPOIMENTOS */
+.depoimentos {
+  @extend .container;
+  padding-block: clamp(32px, 6vw, 56px);
+  text-align: center;
+
+  h3 {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+  }
+
+  > p {
+    color: $sub;
+    margin-bottom: 24px;
+  }
+
+  .depoimentos__lista {
+    display: flex;
+    gap: clamp(16px, 3vw, 24px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (min-width: 960px) {
+    .depoimentos__lista {
+      flex-wrap: nowrap; /* não deixa quebrar linha */
+      justify-content: center; /* centraliza o grupo */
+    }
+
+    .depoimentos .depo {
+      width: 33.333%; /* cada um ocupa um terço */
+      max-width: 338px; /* bem perto do valor do Figma */
+    }
+  }
+
+  .depo {
+    background: $white;
+    border-radius: 8px;
+    /* borda igual do amigo */
+    border: 1px solid #9ca3af;
+    border-left: 4px solid #9ca3af;
+
+    padding: 20px;
+    width: min(100%, 360px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* sombra bem suave, como no Figma */
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.04);
+
+    .stars {
+      display: block;
+      font-size: 1.2rem;
+      color: #facc15; /* amarelo das estrelas */
+      letter-spacing: 2px;
+      text-align: left;
+    }
+
+    p {
+      color: $title;
+      text-align: left;
+    }
+
+    .usuario {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-align: left;
+
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      strong {
+        font-weight: 600;
+        color: $title;
+      }
+
+      span {
+        font-size: 0.9rem;
+        color: $sub;
+      }
+    }
+  }
+}
+
+/* CTA */
+.cta {
+  background: #f3f5f8; /* mesma cor do Figma */
+  padding-block: clamp(28px, 6vw, 56px);
+
+  .cta__box {
+    @extend .container; /* alinha com o restante do layout */
+
+    /* tira cara de card */
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+
+    .cta__acoes {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+/* só ajuste de texto da CTA no desktop, SEM @extend aqui dentro */
+@media (min-width: 960px) {
+  .cta p {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+}
+
+/* FOOTER */
+footer {
+  background: #0f172a;
+  color: $white;
+  font-size: 0.95rem;
+
+  .footer__content {
+    @extend .container;
+    padding-block: 28px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer__col {
+    flex: 1 1 0;
+    min-width: 180px;
+  }
+
+  .footer__brand {
+    max-width: 260px;
+  }
+
+  .footer__logoBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+
+    .footer__logo {
+      width: 34px;
+      height: 34px;
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: $white;
+    }
+  }
+
+  .footer__brand p {
+    color: #cbd5e1;
+    line-height: 1.4;
+  }
+
+  .footer__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .footer__col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    li a {
+      color: #e5e7eb;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer__social {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      display: block;
+    }
+  }
+
+  .footer__bottom {
+    border-top: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 12px 0 18px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    .footer-heart {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+  }
+}
+
+/* RESPONSIVO DO FOOTER */
+@media (max-width: 768px) {
+  footer {
+    .footer__content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+}
