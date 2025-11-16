@@ -15,10 +15,10 @@ O projeto foi desenvolvido a partir de um layout no Figma, seguindo fielmente:
 
 ## 🚀 Tecnologias Utilizadas
 
-- HTML5  
-- Sass (SCSS)  
-- JavaScript  
-- Responsividade (Mobile First)  
+- HTML5
+- Sass (SCSS)
+- JavaScript
+- Responsividade (Mobile First)
 
 ## 🌐 Deploy
 
@@ -41,3 +41,4 @@ Thatiana Mattos
 Dev Full-stack em formação
 🌐 https://github.com/ThatianaMattos
 
+```
