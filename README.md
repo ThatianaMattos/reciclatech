@@ -20,9 +20,10 @@ O projeto foi desenvolvido a partir de um layout no Figma, seguindo fielmente:
 - JavaScript
 - Responsividade (Mobile First)
 
-## 🌐 Deploy
+## 🚀 Deploy
 
-Em breve: link do GitHub Pages.
+**Vercel:** [https://reciclatech-green.vercel.app](https://reciclatech-green.vercel.app)  
+**GitHub Pages:** [https://thatianamattos.github.io/reciclatech](https://thatianamattos.github.io/reciclatech)
 
 ## 📦 Como rodar o projeto
 
